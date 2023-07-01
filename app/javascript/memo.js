@@ -13,26 +13,7 @@ const buildHTML = (XHR) => {
 };
 
 function post (){
-  const submit = document.getElementById("submit");
-  submit.addEventListener("click", (e) => {
-    e.preventDefault();
-    const form = document.getElementById("form");
-    const formData = new FormData(form);
-    const XHR = new XMLHttpRequest();
-    XHR.open("POST", "/posts", true);
-    XHR.responseType = "json";
-    XHR.send(formData);
-    XHR.onload = () => {
-      if (XHR.status != 200) {
-        alert(`Error ${XHR.status}: ${XHR.statusText}`);
-        return null;
-      };
-      const list = document.getElementById("list");
-      const formText = document.getElementById("content");
-        list.insertAdjacentHTML("afterend", html);
-        formText.value = "";
-    };
-  });
+  console.log("イベント発火");
 };
 
 window.addEventListener('load', post);
