@@ -1,19 +1,9 @@
-const buildHTML = (XHR) => {
-  const item = XHR.response.post;
-  const html = `
-    <div class="post">
-      <div class="post-date">
-        投稿日時：${item.created_at}
-      </div>
-      <div class="post-content">
-        ${item.content}
-      </div>
-    </div>`;
-  return html;
-};
-
 function post (){
-  console.log("イベント発火");
+  const submit = document.getElementById("submit");//submitの要素を取得
+  submit.addEventListener("click", () =>{ //アロー関数
+    const form =document.getElementById("form");//フォームに入力した値を取得
+    const formData = new FormData(form);// new FormData(フォームの要素);でオブジェクトを生成
+  });
 };
 
-window.addEventListener('load', post);
+window.addEventListener('load', post);//ページが読み込まれたら関数postを実行
